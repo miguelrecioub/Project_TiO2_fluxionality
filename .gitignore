@@ -1,8 +1,13 @@
 
 # Heavy compressed outputs
-*.bz2
 *.tar
 *.tar.gz
 *.tar.bz2
 *.tar.xz
 *.zip
+
+# Excluded to keep the GitHub push below the repository size limit
+step3_NACs/outputs/100K/isomer1_100K_step3_part18.bz2
+step3_NACs/outputs/100K/isomer1_100K_step3_part19.bz2
+step3_NACs/outputs/100K/isomer1_100K_step3_part20.bz2
+step3_NACs/outputs/100K/isomer1_100K_step3_part21.bz2
