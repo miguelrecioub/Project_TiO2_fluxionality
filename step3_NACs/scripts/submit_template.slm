@@ -1,0 +1,38 @@
+#!/bin/sh -l
+#SBATCH --account=alexeyak
+##SBATCH --partition=valhalla  --qos=valhalla
+##SBATCH --clusters=faculty
+#SBATCH --partition=general-compute  --qos=general-compute
+#SBATCH --clusters=ub-hpc
+##SBATCH --partition=scavenger  --qos=scavenger
+#SBATCH --time=72:00:00
+##SBATCH --constraint=CPU-Gold-6230|CPU-Gold-6130|CPU-Gold-6330
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=10
+##SBATCH --constraint=AVX2
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=120000
+##SBATCH --constraint=AVX512
+##SBATCH --mail-user=mshakiba@buffalo.edu
+#SBATCH --mail-user=qingxinz@buffalo.edu
+#SBATCH --mail-type="ALL"
+
+#module use /projects/academic/cyberwksp21/MODULES
+#module load cp2k/v24/avx512
+
+#mpirun -np 9 cp2k.psmp -i mg_C60.inp -o out.log
+
+echo "SLURM_JOBID="$SLURM_JOBID
+echo "SLURM_JOB_NODELIST="$SLURM_JOB_NODELIST
+echo "SLURM_NNODES="$SLURM_NNODES
+echo "SLURMTMPDIR="$SLURMTMPDIR
+echo "working directory="$SLURM_SUBMIT_DIR
+lscpu
+#module load ccrsoft/legacy
+module use /projects/academic/cyberwksp21/Modules
+module load jupyter
+which python
+python step3_NACs.py
+
+
+
