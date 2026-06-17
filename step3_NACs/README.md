@@ -20,9 +20,13 @@ The `representation_PDs.py` script was used to generate, for both 100 K and 300 
 
 **outputs**:
 
-The complete step 3 NAC output files are large. Therefore, as in step 2, only the results corresponding to the last 500 geometries of the AIMD trajectories are provided. These correspond to geometries 2500-3000.
+The complete step 3 NAC output files are large. Therefore, as in step 2, only a subset of the results corresponding to the last part of the AIMD trajectories is provided.
 
-The `key_outputs` directory contains two subdirectories, one for each temperature: `100K` and `300K`. Each subdirectory contains the compressed `.bz2` files with the NAC results for isomer 1 at the corresponding temperature.
+For the 300 K case, the provided compressed files correspond to the last 500 geometries of the trajectory, i.e. geometries 2500-3000.
+
+For the 100 K case, the provided compressed files were further reduced for disk-space reasons and correspond approximately to the first 150 geometries of this final segment, i.e. geometries 2500-2650.
+
+The remaining step 3 NAC output files are not included in the GitHub repository due to size limitations and can be provided separately through Zenodo if needed.
 
 For the 100 K case, the NAC results are provided as compressed files named:
 
